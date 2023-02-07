@@ -20,7 +20,8 @@ public class Game {
 
         // remplacer l'instruction suivante par une instruction contenant un opérateur ternaire.
         // La méthode doit retourner le joueur qui a gagné (= celui qui a le plus de points).
-        return null;
+
+        return (p1.getPoints()> p2.getPoints())? p1:p2;
     }
 
     private void playNextRound() {
@@ -31,11 +32,17 @@ public class Game {
         } while (result1 == result2);
         // insérer ici l'instruction contenant l'opérateur ternaire
 
+         if(result1>result2)
+             p1.addPoint();
+         else
+             p2.addPoint();
+
         //
     }
 
     private int rollDice() {
         return dice.nextInt(6);
     }
+
 
 }
